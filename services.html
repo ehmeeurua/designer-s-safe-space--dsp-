@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses & Services — Designer's Safe Space</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { green: '#16a34a', yellow: '#facc15', purple: '#7c3aed' }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 text-black font-sans antialiased">
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 right-0 bg-white z-50 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-4">
+          <div class="avatar avatar-header" data-initials="AD" style="background-color:#16a34a;color:#fff;font-size:14px;">AD</div>
+          <div>
+            <p class="font-semibold text-sm">Hi, Adaeze</p>
+            <p class="text-xs text-gray-500">Junior Designer</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="dashboard.html" class="text-sm text-gray-600 hover:text-black font-medium transition-colors hidden sm:block">Dashboard</a>
+          <button class="relative p-2 text-gray-500 hover:text-gray-700">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-24 pb-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <!-- Page Header -->
+      <div class="mb-10">
+        <h1 class="text-3xl font-bold mb-2">Courses & Services</h1>
+        <p class="text-gray-600">Learn from industry experts and level up your design career.</p>
+      </div>
+
+      <!-- Featured Course -->
+      <div class="bg-gradient-to-r from-green-600 to-green-500 rounded-2xl p-8 mb-10 text-white">
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+          <div class="flex-1">
+            <span class="inline-block text-xs font-semibold bg-white/20 px-3 py-1 rounded-full mb-3">Featured Course</span>
+            <h2 class="text-2xl font-bold mb-2">Introduction to Product Design</h2>
+            <p class="text-green-100 text-sm mb-4 max-w-lg">A comprehensive 12-module course covering everything from design thinking to prototyping and user testing.</p>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="avatar avatar-chat ring-2 ring-white/30" data-initials="EU" style="background-color:#fff;color:#16a34a;font-size:11px;font-weight:700;">EU</div>
+              <div>
+                <p class="font-medium text-sm">Emem Urua</p>
+                <p class="text-green-200 text-xs">Lead Instructor</p>
+              </div>
+            </div>
+            <button class="bg-white text-brand-green font-semibold px-6 py-3 rounded-xl hover:bg-green-50 transition-colors text-sm">
+              Start Learning
+            </button>
+          </div>
+          <div class="w-full md:w-48 h-32 bg-white/10 rounded-xl flex items-center justify-center">
+            <svg class="w-16 h-16 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course Categories -->
+      <div class="flex flex-wrap gap-3 mb-8">
+        <button class="px-4 py-2 rounded-xl bg-brand-green text-white text-sm font-medium">All Courses</button>
+        <button class="px-4 py-2 rounded-xl bg-white border border-gray-200 text-gray-600 text-sm font-medium hover:border-brand-green hover:text-brand-green transition-colors">UI Design</button>
+        <button class="px-4 py-2 rounded-xl bg-white border border-gray-200 text-gray-600 text-sm font-medium hover:border-brand-green hover:text-brand-green transition-colors">UX Design</button>
+        <button class="px-4 py-2 rounded-xl bg-white border border-gray-200 text-gray-600 text-sm font-medium hover:border-brand-green hover:text-brand-green transition-colors">Research</button>
+        <button class="px-4 py-2 rounded-xl bg-white border border-gray-200 text-gray-600 text-sm font-medium hover:border-brand-green hover:text-brand-green transition-colors">Design Systems</button>
+      </div>
+
+      <!-- Course Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Course 1 -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="h-40 bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center">
+            <svg class="w-16 h-16 text-brand-green/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-brand-green bg-green-50 px-2 py-1 rounded-full">Beginner</span>
+            <h3 class="font-bold mt-3 mb-2">Intro to Product Design</h3>
+            <p class="text-gray-600 text-sm mb-4">Learn the fundamentals of product design from scratch with hands-on projects.</p>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="avatar avatar-chat" data-initials="EU" style="background-color:#16a34a;color:#fff;font-size:10px;">EU</div>
+              <div>
+                <p class="text-sm font-medium">Emem Urua</p>
+                <p class="text-xs text-gray-500">12 Modules</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-bold text-brand-green">Free</span>
+              <button class="text-sm font-medium text-brand-green hover:underline">Enroll Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="h-40 bg-gradient-to-br from-purple-100 to-purple-50 flex items-center justify-center">
+            <svg class="w-16 h-16 text-brand-purple/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-brand-purple bg-purple-50 px-2 py-1 rounded-full">Intermediate</span>
+            <h3 class="font-bold mt-3 mb-2">Advanced UI Design</h3>
+            <p class="text-gray-600 text-sm mb-4">Master complex UI patterns, micro-interactions, and responsive design systems.</p>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="avatar avatar-chat" data-initials="SE" style="background-color:#7c3aed;color:#fff;font-size:10px;">SE</div>
+              <div>
+                <p class="text-sm font-medium">Sifon Etuk</p>
+                <p class="text-xs text-gray-500">8 Modules</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-bold text-brand-green">Free</span>
+              <button class="text-sm font-medium text-brand-green hover:underline">Enroll Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="h-40 bg-gradient-to-br from-yellow-100 to-yellow-50 flex items-center justify-center">
+            <svg class="w-16 h-16 text-yellow-500/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-yellow-600 bg-yellow-50 px-2 py-1 rounded-full">Beginner</span>
+            <h3 class="font-bold mt-3 mb-2">UX Research Essentials</h3>
+            <p class="text-gray-600 text-sm mb-4">Learn how to conduct user research, create personas, and validate design decisions.</p>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="avatar avatar-chat" data-initials="TA" style="background-color:#facc15;color:#000;font-size:10px;">TA</div>
+              <div>
+                <p class="text-sm font-medium">Toyo Akpatuk</p>
+                <p class="text-xs text-gray-500">10 Modules</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-bold text-brand-green">Free</span>
+              <button class="text-sm font-medium text-brand-green hover:underline">Enroll Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 4 -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="h-40 bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center">
+            <svg class="w-16 h-16 text-blue-500/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-full">Advanced</span>
+            <h3 class="font-bold mt-3 mb-2">Design Systems Mastery</h3>
+            <p class="text-gray-600 text-sm mb-4">Build scalable design systems that power consistent, efficient product teams.</p>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="avatar avatar-chat" data-initials="OB" style="background-color:#3b82f6;color:#fff;font-size:10px;">OB</div>
+              <div>
+                <p class="text-sm font-medium">Ola Bakare</p>
+                <p class="text-xs text-gray-500">15 Modules</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-bold text-brand-green">Free</span>
+              <button class="text-sm font-medium text-brand-green hover:underline">Enroll Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 5 -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="h-40 bg-gradient-to-br from-red-100 to-red-50 flex items-center justify-center">
+            <svg class="w-16 h-16 text-red-500/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-red-600 bg-red-50 px-2 py-1 rounded-full">Intermediate</span>
+            <h3 class="font-bold mt-3 mb-2">Interaction Design</h3>
+            <p class="text-gray-600 text-sm mb-4">Create delightful micro-interactions and motion design for digital products.</p>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="avatar avatar-chat" data-initials="FI" style="background-color:#ef4444;color:#fff;font-size:10px;">FI</div>
+              <div>
+                <p class="text-sm font-medium">Funke Idowu</p>
+                <p class="text-xs text-gray-500">6 Modules</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-bold text-brand-green">Free</span>
+              <button class="text-sm font-medium text-brand-green hover:underline">Enroll Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 6 -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="h-40 bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
+            <svg class="w-16 h-16 text-gray-400/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-gray-600 bg-gray-100 px-2 py-1 rounded-full">All Levels</span>
+            <h3 class="font-bold mt-3 mb-2">Portfolio Building</h3>
+            <p class="text-gray-600 text-sm mb-4">Create a stunning portfolio that lands you interviews and high-paying design jobs.</p>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="avatar avatar-chat" data-initials="KA" style="background-color:#6b7280;color:#fff;font-size:10px;">KA</div>
+              <div>
+                <p class="text-sm font-medium">Kemi Ajayi</p>
+                <p class="text-xs text-gray-500">5 Modules</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-bold text-brand-green">Free</span>
+              <button class="text-sm font-medium text-brand-green hover:underline">Enroll Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lesson Preview Section -->
+      <div class="mt-16">
+        <h2 class="text-2xl font-bold mb-6">Upcoming Lessons</h2>
+        <div class="space-y-4">
+          <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/></svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-bold text-sm">Module 8: Wireframing Techniques</h3>
+              <p class="text-xs text-gray-500 mt-1">Intro to Product Design — 45 min</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="avatar avatar-chat" data-initials="EU" style="background-color:#16a34a;color:#fff;font-size:10px;">EU</div>
+              <span class="text-xs text-gray-600 font-medium">Emem Urua</span>
+            </div>
+            <button class="text-sm font-medium text-white bg-brand-green px-5 py-2 rounded-xl hover:bg-green-700 transition-colors">Start</button>
+          </div>
+          <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-brand-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/></svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-bold text-sm">Module 3: Component Architecture</h3>
+              <p class="text-xs text-gray-500 mt-1">Advanced UI Design — 60 min</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="avatar avatar-chat" data-initials="SE" style="background-color:#7c3aed;color:#fff;font-size:10px;">SE</div>
+              <span class="text-xs text-gray-600 font-medium">Sifon Etuk</span>
+            </div>
+            <button class="text-sm font-medium text-white bg-brand-green px-5 py-2 rounded-xl hover:bg-green-700 transition-colors">Start</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

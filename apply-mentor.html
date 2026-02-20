@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply to be a Mentor — Designer's Safe Space</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { green: '#16a34a', yellow: '#facc15', purple: '#7c3aed' }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 text-black font-sans antialiased min-h-screen py-8 px-4">
+
+  <div class="w-full max-w-lg mx-auto">
+    <!-- Logo -->
+    <div class="text-center mb-8">
+      <a href="index.html" class="inline-flex items-center gap-2 mb-4">
+        <div class="w-10 h-10 bg-brand-purple rounded-xl flex items-center justify-center">
+          <span class="text-white font-bold text-sm">DSP</span>
+        </div>
+        <span class="font-bold text-xl">Designer's Safe Space</span>
+      </a>
+      <div class="inline-flex items-center gap-2 bg-purple-50 text-brand-purple text-xs font-semibold px-3 py-1.5 rounded-full">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        Elite Mentor Program
+      </div>
+    </div>
+
+    <!-- Application Form -->
+    <div class="bg-white rounded-2xl p-8 shadow-sm border border-purple-100">
+      <div class="text-center mb-8">
+        <!-- Large Mentor Avatar Placeholder -->
+        <div class="relative inline-block">
+          <div class="w-28 h-28 rounded-full bg-purple-50 border-4 border-purple-200 flex items-center justify-center mx-auto cursor-pointer hover:opacity-80 transition-opacity" id="mentor-avatar-preview">
+            <svg class="w-12 h-12 text-brand-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div class="absolute bottom-0 right-0 w-8 h-8 bg-brand-purple rounded-full flex items-center justify-center shadow-md">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </div>
+        </div>
+        <p class="text-sm text-gray-500 mt-3">Upload your profile image</p>
+        <input type="file" id="mentor-avatar-upload" accept="image/*" class="hidden">
+        <h1 class="text-2xl font-bold mt-4">Apply to be a <span class="text-brand-purple">Mentor</span></h1>
+        <p class="text-gray-500 text-sm mt-1">Share your expertise and guide the next generation of designers</p>
+      </div>
+
+      <form id="mentor-application-form" class="space-y-5">
+        <div>
+          <label for="mentor-name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+          <input type="text" id="mentor-name" name="full_name" required placeholder="Your full name"
+            class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-purple focus:ring-2 focus:ring-purple-100 outline-none transition-all text-sm">
+        </div>
+
+        <div>
+          <label for="mentor-email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+          <input type="email" id="mentor-email" name="email" required placeholder="mentor@example.com"
+            class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-purple focus:ring-2 focus:ring-purple-100 outline-none transition-all text-sm">
+        </div>
+
+        <div>
+          <label for="experience" class="block text-sm font-medium text-gray-700 mb-2">Years of Experience</label>
+          <select id="experience" name="years_experience" required
+            class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-purple focus:ring-2 focus:ring-purple-100 outline-none transition-all text-sm bg-white appearance-none cursor-pointer">
+            <option value="" disabled selected>Select experience level</option>
+            <option value="3-5">3–5 years</option>
+            <option value="5-8">5–8 years</option>
+            <option value="8-10">8–10 years</option>
+            <option value="10+">10+ years</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="expertise" class="block text-sm font-medium text-gray-700 mb-2">Area of Expertise</label>
+          <select id="expertise" name="area_of_expertise" required
+            class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-purple focus:ring-2 focus:ring-purple-100 outline-none transition-all text-sm bg-white appearance-none cursor-pointer">
+            <option value="" disabled selected>Select your expertise</option>
+            <option value="ui-design">UI Design</option>
+            <option value="ux-design">UX Design</option>
+            <option value="product-design">Product Design</option>
+            <option value="ux-research">UX Research</option>
+            <option value="interaction-design">Interaction Design</option>
+            <option value="visual-design">Visual Design</option>
+            <option value="design-systems">Design Systems</option>
+            <option value="brand-design">Brand Design</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="portfolio" class="block text-sm font-medium text-gray-700 mb-2">Portfolio Link</label>
+          <input type="url" id="portfolio" name="portfolio_link" required placeholder="https://yourportfolio.com"
+            class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-purple focus:ring-2 focus:ring-purple-100 outline-none transition-all text-sm">
+        </div>
+
+        <div>
+          <label for="social-link" class="block text-sm font-medium text-gray-700 mb-2">LinkedIn / Social Link</label>
+          <input type="url" id="social-link" name="social_link" placeholder="https://linkedin.com/in/yourprofile"
+            class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-purple focus:ring-2 focus:ring-purple-100 outline-none transition-all text-sm">
+        </div>
+
+        <div>
+          <label for="motivation" class="block text-sm font-medium text-gray-700 mb-2">Why do you want to mentor?</label>
+          <textarea id="motivation" name="motivation" required rows="4" placeholder="Share your motivation and what you hope to bring to mentees..."
+            class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-purple focus:ring-2 focus:ring-purple-100 outline-none transition-all text-sm resize-none"></textarea>
+        </div>
+
+        <button type="submit"
+          class="w-full bg-brand-purple text-white font-semibold py-3.5 rounded-xl hover:bg-purple-700 transition-all shadow-sm text-sm">
+          Submit Application
+        </button>
+      </form>
+
+      <div class="mt-6 text-center">
+        <p class="text-sm text-gray-500">
+          Already a member? <a href="login.html" class="text-brand-purple hover:underline font-medium">Sign in</a>
+        </p>
+      </div>
+    </div>
+
+    <p class="text-center text-xs text-gray-400 mt-6">
+      &copy; 2026 Designer's Safe Space. All rights reserved.
+    </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

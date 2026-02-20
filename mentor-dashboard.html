@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentor Dashboard — Designer's Safe Space</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { green: '#16a34a', yellow: '#facc15', purple: '#7c3aed' }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 text-black font-sans antialiased">
+
+  <!-- HEADER (Purple-accented) -->
+  <header class="fixed top-0 left-0 right-0 bg-white z-50 border-b border-purple-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-4">
+          <!-- Mentor Avatar -->
+          <div class="avatar avatar-header ring-2 ring-purple-200" data-initials="OB" style="background-color:#7c3aed;color:#fff;font-size:14px;">OB</div>
+          <div>
+            <p class="font-semibold text-sm">Ola Bakare</p>
+            <p class="text-xs text-brand-purple font-medium">Senior Mentor</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="hidden sm:flex items-center gap-2 bg-purple-50 text-brand-purple px-3 py-1.5 rounded-xl border border-purple-200">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <span class="text-xs font-bold">Elite Mentor</span>
+          </div>
+          <button class="relative p-2 text-gray-500 hover:text-gray-700">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+            <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-24 pb-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <!-- Mentor Profile Card -->
+      <div class="bg-gradient-to-r from-purple-600 to-purple-500 rounded-2xl p-8 mb-8 text-white">
+        <div class="flex flex-col sm:flex-row items-center gap-6">
+          <div class="avatar avatar-lg ring-4 ring-white/30" data-initials="OB" style="background-color:#fff;color:#7c3aed;font-size:28px;font-weight:800;">OB</div>
+          <div class="text-center sm:text-left">
+            <h1 class="text-2xl font-bold">Ola Bakare</h1>
+            <p class="text-purple-200 text-sm mt-1">Design Systems Expert — 10+ years experience</p>
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 mt-3 text-sm">
+              <span class="flex items-center gap-1"><strong>12</strong> mentees</span>
+              <span class="flex items-center gap-1"><strong>4.9</strong> rating</span>
+              <span class="flex items-center gap-1"><strong>86</strong> sessions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <!-- Left Column -->
+        <div class="lg:col-span-2 space-y-6">
+          <!-- My Mentees -->
+          <div class="bg-white rounded-2xl p-6 border border-purple-100 shadow-sm">
+            <div class="flex items-center justify-between mb-5">
+              <h2 class="font-bold text-lg">My Mentees</h2>
+              <span class="text-xs text-brand-purple bg-purple-50 px-2 py-1 rounded-full font-medium">12 active</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <div class="flex items-center gap-3 p-4 rounded-xl bg-purple-50/50 hover:bg-purple-50 cursor-pointer transition-colors">
+                <div class="relative">
+                  <div class="avatar avatar-header" data-initials="AD" style="background-color:#16a34a;color:#fff;font-size:12px;">AD</div>
+                  <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-400 border-2 border-white rounded-full"></span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-medium text-sm truncate">Adaeze Obi</p>
+                  <p class="text-xs text-gray-500">Junior — Module 8/12</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-4 rounded-xl bg-purple-50/50 hover:bg-purple-50 cursor-pointer transition-colors">
+                <div class="relative">
+                  <div class="avatar avatar-header" data-initials="CK" style="background-color:#3b82f6;color:#fff;font-size:12px;">CK</div>
+                  <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-400 border-2 border-white rounded-full"></span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-medium text-sm truncate">Chioma Kalu</p>
+                  <p class="text-xs text-gray-500">Intermediate — Module 5/8</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-4 rounded-xl bg-purple-50/50 hover:bg-purple-50 cursor-pointer transition-colors">
+                <div class="relative">
+                  <div class="avatar avatar-header" data-initials="EA" style="background-color:#f97316;color:#fff;font-size:12px;">EA</div>
+                  <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-gray-300 border-2 border-white rounded-full"></span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-medium text-sm truncate">Emeka Ade</p>
+                  <p class="text-xs text-gray-500">Junior — Module 3/12</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-4 rounded-xl bg-purple-50/50 hover:bg-purple-50 cursor-pointer transition-colors">
+                <div class="relative">
+                  <div class="avatar avatar-header" data-initials="BI" style="background-color:#ef4444;color:#fff;font-size:12px;">BI</div>
+                  <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-400 border-2 border-white rounded-full"></span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-medium text-sm truncate">Blessing Ibe</p>
+                  <p class="text-xs text-gray-500">Junior — Module 1/12</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-4 rounded-xl bg-purple-50/50 hover:bg-purple-50 cursor-pointer transition-colors">
+                <div class="relative">
+                  <div class="avatar avatar-header" data-initials="TN" style="background-color:#ec4899;color:#fff;font-size:12px;">TN</div>
+                  <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-400 border-2 border-white rounded-full"></span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-medium text-sm truncate">Tunde Nwosu</p>
+                  <p class="text-xs text-gray-500">Intermediate — Module 7/8</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-4 rounded-xl bg-purple-50/50 hover:bg-purple-50 cursor-pointer transition-colors">
+                <div class="relative">
+                  <div class="avatar avatar-header" data-initials="NN" style="background-color:#facc15;color:#000;font-size:12px;">NN</div>
+                  <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-gray-300 border-2 border-white rounded-full"></span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-medium text-sm truncate">Nneka Nwachukwu</p>
+                  <p class="text-xs text-gray-500">Junior — Module 6/12</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat Messages -->
+          <div class="bg-white rounded-2xl border border-purple-100 shadow-sm overflow-hidden">
+            <div class="p-6 border-b border-gray-100">
+              <h2 class="font-bold text-lg">Recent Messages</h2>
+            </div>
+            <div class="p-6 space-y-4 max-h-96 overflow-y-auto">
+              <!-- Incoming Message -->
+              <div class="flex items-start gap-3">
+                <div class="avatar avatar-chat flex-shrink-0" data-initials="AD" style="background-color:#16a34a;color:#fff;font-size:10px;">AD</div>
+                <div>
+                  <div class="bg-gray-100 rounded-2xl rounded-tl-md px-4 py-3 max-w-md">
+                    <p class="text-sm">Hi mentor! I'm stuck on the user flow for my e-commerce project. Can you review it?</p>
+                  </div>
+                  <p class="text-xs text-gray-400 mt-1">Adaeze Obi — 10 min ago</p>
+                </div>
+              </div>
+              <!-- Outgoing Message -->
+              <div class="flex items-start gap-3 flex-row-reverse">
+                <div class="avatar avatar-chat flex-shrink-0" data-initials="OB" style="background-color:#7c3aed;color:#fff;font-size:10px;">OB</div>
+                <div>
+                  <div class="bg-brand-purple text-white rounded-2xl rounded-tr-md px-4 py-3 max-w-md">
+                    <p class="text-sm">Sure, send me the Figma link. I'll review it and we can do a screen share at 3pm.</p>
+                  </div>
+                  <p class="text-xs text-gray-400 mt-1 text-right">You — 8 min ago</p>
+                </div>
+              </div>
+              <!-- Incoming Message -->
+              <div class="flex items-start gap-3">
+                <div class="avatar avatar-chat flex-shrink-0" data-initials="CK" style="background-color:#3b82f6;color:#fff;font-size:10px;">CK</div>
+                <div>
+                  <div class="bg-gray-100 rounded-2xl rounded-tl-md px-4 py-3 max-w-md">
+                    <p class="text-sm">Thank you for the feedback on my portfolio! I've made all the changes you suggested.</p>
+                  </div>
+                  <p class="text-xs text-gray-400 mt-1">Chioma Kalu — 1h ago</p>
+                </div>
+              </div>
+              <!-- Incoming Message -->
+              <div class="flex items-start gap-3">
+                <div class="avatar avatar-chat flex-shrink-0" data-initials="EA" style="background-color:#f97316;color:#fff;font-size:10px;">EA</div>
+                <div>
+                  <div class="bg-gray-100 rounded-2xl rounded-tl-md px-4 py-3 max-w-md">
+                    <p class="text-sm">Mentor, what's the best way to present a case study? I have an interview next week.</p>
+                  </div>
+                  <p class="text-xs text-gray-400 mt-1">Emeka Ade — 3h ago</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 border-t border-gray-100 bg-gray-50">
+              <div class="flex items-center gap-3">
+                <input type="text" placeholder="Type a message..." class="flex-1 px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-purple focus:ring-2 focus:ring-purple-100 outline-none text-sm">
+                <button class="bg-brand-purple text-white p-3 rounded-xl hover:bg-purple-700 transition-colors">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="space-y-6">
+          <!-- Q&A Moderation -->
+          <div class="bg-white rounded-2xl p-6 border border-purple-100 shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+              <h2 class="font-bold">Q&A Moderation</h2>
+              <span class="text-xs text-red-500 bg-red-50 px-2 py-1 rounded-full font-medium">5 pending</span>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="avatar avatar-chat flex-shrink-0 mt-0.5" data-initials="AD" style="background-color:#16a34a;color:#fff;font-size:10px;">AD</div>
+                <div>
+                  <p class="text-sm font-medium">How do I handle user testing for mobile-first apps?</p>
+                  <p class="text-xs text-gray-500 mt-1">Adaeze — 30 min ago</p>
+                  <button class="text-xs text-brand-purple font-medium mt-2 hover:underline">Answer</button>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="avatar avatar-chat flex-shrink-0 mt-0.5" data-initials="TN" style="background-color:#ec4899;color:#fff;font-size:10px;">TN</div>
+                <div>
+                  <p class="text-sm font-medium">What's the difference between UI and UX design?</p>
+                  <p class="text-xs text-gray-500 mt-1">Tunde — 2h ago</p>
+                  <button class="text-xs text-brand-purple font-medium mt-2 hover:underline">Answer</button>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="avatar avatar-chat flex-shrink-0 mt-0.5" data-initials="BI" style="background-color:#ef4444;color:#fff;font-size:10px;">BI</div>
+                <div>
+                  <p class="text-sm font-medium">Best Figma plugins for design system management?</p>
+                  <p class="text-xs text-gray-500 mt-1">Blessing — 4h ago</p>
+                  <button class="text-xs text-brand-purple font-medium mt-2 hover:underline">Answer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Sessions -->
+          <div class="bg-white rounded-2xl p-6 border border-purple-100 shadow-sm">
+            <h2 class="font-bold mb-4">Upcoming Sessions</h2>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-purple-50/50">
+                <div class="avatar avatar-chat" data-initials="AD" style="background-color:#16a34a;color:#fff;font-size:10px;">AD</div>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium truncate">Adaeze Obi</p>
+                  <p class="text-xs text-gray-500">Today, 3:00 PM</p>
+                </div>
+                <span class="text-xs text-brand-purple font-medium">Join</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-purple-50/50">
+                <div class="avatar avatar-chat" data-initials="CK" style="background-color:#3b82f6;color:#fff;font-size:10px;">CK</div>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium truncate">Chioma Kalu</p>
+                  <p class="text-xs text-gray-500">Tomorrow, 10:00 AM</p>
+                </div>
+                <span class="text-xs text-gray-400 font-medium">Scheduled</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-purple-50/50">
+                <div class="avatar avatar-chat" data-initials="EA" style="background-color:#f97316;color:#fff;font-size:10px;">EA</div>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium truncate">Emeka Ade</p>
+                  <p class="text-xs text-gray-500">Friday, 2:00 PM</p>
+                </div>
+                <span class="text-xs text-gray-400 font-medium">Scheduled</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="space-y-3">
+            <a href="settings.html" class="flex items-center gap-3 bg-white rounded-xl p-4 border border-purple-100 hover:shadow-sm transition-shadow">
+              <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span class="text-sm font-medium text-gray-700">Mentor Settings</span>
+            </a>
+            <a href="index.html" class="flex items-center gap-3 bg-white rounded-xl p-4 border border-purple-100 hover:shadow-sm transition-shadow">
+              <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+              <span class="text-sm font-medium text-red-500">Sign Out</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
