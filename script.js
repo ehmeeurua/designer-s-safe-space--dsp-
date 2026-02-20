@@ -1,4 +1,4 @@
-/* ============================================
+I'm/* ============================================
    DESIGNER'S SAFE SPACE — INTERACTIONS
    ============================================ */
 
@@ -22,7 +22,18 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
-
+// 🚫 Disable any code hiding landing sections
+window.addEventListener("DOMContentLoaded", () => {
+  ["features", "testimonials", "team"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.style.display = "block";
+      el.style.opacity = "1";
+      el.style.visibility = "visible";
+      el.style.transform = "none";
+    }
+  });
+});
   // ── DASHBOARD SIDEBAR (Mobile) ──
   const dashMobileBtn = document.getElementById('dash-mobile-btn');
   const mobileSidebar = document.getElementById('mobile-sidebar');
