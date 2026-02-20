@@ -1,0 +1,18 @@
+/* 🔒 HARD LOCK landing page sections so they never disappear */
+#features,
+#testimonials,
+#team {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  position: relative !important;
+}
+
+/* Kill any animation that might hide them */
+#features *,
+#testimonials *,
+#team * {
+  animation: none !important;
+  transition: none !important;
+}
