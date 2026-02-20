@@ -33,7 +33,6 @@ window.addEventListener("DOMContentLoaded", () => {
       el.style.transform = "none";
     }
   });
-});
   // ── DASHBOARD SIDEBAR (Mobile) ──
   const dashMobileBtn = document.getElementById('dash-mobile-btn');
   const mobileSidebar = document.getElementById('mobile-sidebar');
