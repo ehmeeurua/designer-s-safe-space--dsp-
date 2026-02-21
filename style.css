@@ -1,70 +1,43 @@
-/* ============================================
-   DESIGNER'S SAFE SPACE — DESIGN SYSTEM CSS
-   ============================================ */
-
-/* ── GLOBAL RESET & BASE ── */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
+/* ─── BASE RESET & SMOOTH SCROLLING ─── */
 html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth !important;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: 'Inter', sans-serif; /* Standard for modern designs */
 }
 
-/* ── AVATAR SYSTEM ── */
+/* ─── LANDING PAGE FIX: PREVENT DISAPPEARING SECTIONS ─── */
+/* These rules force Features, Testimonials, and Team sections to remain visible */
+section {
+  position: relative !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  overflow: visible !important;
+  clear: both;
+}
 
-/* Base avatar styles */
+/* ─── AVATAR STYLES ─── */
 .avatar {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
-  font-weight: 700;
+  font-weight: 600;
   flex-shrink: 0;
-  overflow: hidden;
-  user-select: none;
-  position: relative;
-}
-
-/* Avatar with image */
-.avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 9999px;
-}
-
-/* Avatar sizes */
-.avatar-sm {
-  width: 32px;
-  height: 32px;
-  font-size: 12px;
-}
-
-.avatar-chat {
-  width: 36px;
-  height: 36px;
-  font-size: 12px;
 }
 
 .avatar-header {
   width: 40px;
   height: 40px;
-  font-size: 14px;
 }
 
-.avatar-md {
-  width: 64px;
-  height: 64px;
-  font-size: 22px;
+.avatar-chat {
+  width: 32px;
+  height: 32px;
 }
 
 .avatar-lg {
@@ -73,222 +46,80 @@ body {
   font-size: 28px;
 }
 
-.avatar-stack {
-  width: 48px;
-  height: 48px;
-  font-size: 16px;
+/* ─── DASHBOARD & SIDEBAR STABILITY ─── */
+/* Prevents main content from sliding behind fixed elements */
+@media (min-width: 1024px) {
+  .lg\:ml-64 {
+    margin-left: 16rem !important;
+  }
 }
 
-/* Avatar subtle shadow */
-.avatar {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+/* Sidebar behavior */
+#sidebar {
+  transition: transform 0.3s ease-in-out;
+  z-index: 40;
 }
 
-/* Fallback initials display (handled in JS but CSS backup) */
-.avatar[data-initials]::after {
-  content: attr(data-initials);
-}
-
-.avatar:not(:empty)::after {
-  display: none;
-}
-
-/* ── FORM STYLES ── */
-
-/* Custom select arrow */
-select.appearance-none {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='%236b7280'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  background-size: 20px;
-  padding-right: 40px;
-}
-
-/* Focus ring for form elements */
-input:focus, select:focus, textarea:focus {
-  outline: none;
-}
-
-/* Checkbox styling */
-input[type="checkbox"] {
-  accent-color: #16a34a;
-}
-
-/* ── TOGGLE SWITCH ── */
-.peer:checked ~ div:last-child {
-  transform: translateX(20px);
-}
-
-/* ── SCROLLBAR STYLING ── */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #d1d5db;
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #9ca3af;
-}
-
-/* ── ANIMATIONS ── */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideIn {
-  from { opacity: 0; transform: translateX(-16px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes pulse-soft {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.4s ease-out;
-}
-
-.animate-slide-in {
-  animation: slideIn 0.3s ease-out;
-}
-
-/* ── CARD HOVER EFFECTS ── */
-.hover\:shadow-md:hover {
-  transform: translateY(-1px);
-}
-
-/* ── RESPONSIVE AVATAR ADJUSTMENTS ── */
+/* ─── RESPONSIVE AVATAR ADJUSTMENTS ─── */
 @media (max-width: 640px) {
   .avatar-lg {
     width: 64px;
     height: 64px;
     font-size: 22px;
   }
-
   .avatar-md {
     width: 52px;
     height: 52px;
     font-size: 18px;
   }
-
   .avatar-stack {
     width: 40px;
     height: 40px;
     font-size: 14px;
   }
-
   /* Stacked avatars collapse on mobile */
   .flex.-space-x-4 {
     gap: 0;
     margin-left: 0;
   }
-
   .flex.-space-x-4 > .avatar-stack:nth-child(n+6) {
     display: none;
   }
-
   .flex.-space-x-4 > .avatar-stack:last-child {
     display: inline-flex;
   }
 }
 
-/* ── MOBILE NAVIGATION ── */
+/* ─── MOBILE NAVIGATION ─── */
 @media (max-width: 768px) {
   #mobile-menu.active {
     display: block;
   }
-
   #mobile-sidebar.active {
     display: block;
     animation: slideIn 0.25s ease-out;
   }
-
   #sidebar-overlay.active {
     display: block;
   }
 }
 
-/* ── UTILITY CLASSES ── */
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
 
-/* Truncate text */
+/* ─── UTILITY CLASSES ─── */
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-/* Smooth transitions */
-a, button {
-  transition: all 0.2s ease;
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.2s ease;
 }
-
-/* Focus visible outline */
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-  outline: 2px solid #16a34a;
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-/* 🔒 HARD LOCK landing page sections so they never disappear */
-#features,
-#testimonials,
-#team {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-  position: relative !important;
-}
-
-/* Kill any animation that might hide them */
-#features *,
-#testimonials *,
-#team * {
-  animation: none !important;
-  transition: none !important;
-}
-/* ── PRINT STYLES ── */
-@media print {
-  nav, header, aside, footer,
-  button, .avatar {
-    display: none !important;
-  }
-
-  body {
-    background: white !important;
-    color: black !important;
-  }
-
-  main {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-}
-
-/* --- LANDING PAGE FIXES --- */
-html {
-  scroll-behavior: smooth !important;
-}
-
-/* Force visibility for disappearing sections */
-section {
-  position: relative !important;
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  overflow: visible !important;
-}
-
-/* Ensure the main container doesn't clip content */
-body {
-  overflow-x: hidden;
-  overflow-y: auto;
+.hover-lift:hover {
+  transform: translateY(-1px);
 }
