@@ -272,3 +272,23 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     padding: 0 !important;
   }
 }
+
+/* --- LANDING PAGE FIXES --- */
+html {
+  scroll-behavior: smooth !important;
+}
+
+/* Force visibility for disappearing sections */
+section {
+  position: relative !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  overflow: visible !important;
+}
+
+/* Ensure the main container doesn't clip content */
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
