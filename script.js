@@ -1,61 +1,39 @@
-/**
- * script.js - Designer's Safe Space
- * Handles login redirection, mobile navigation, and interactive UI elements.
- */
-
-// 1. LOGIN REDIRECTION
+// --- 1. LOGIN & SIGNUP REDIRECT ---
 function handleLogin(event) {
-    // Prevent the default form submission behavior (page refresh)
     event.preventDefault();
     
-    // In a real application, you would perform validation here.
-    // For now, we force a redirect to the dashboard as requested.
+    // Looks for the name input field in your login/signup form
+    const nameInput = document.querySelector('input[type="text"]') || document.getElementById('login-name');
+    const userName = nameInput ? nameInput.value : "Designer";
+    
+    // Save name to browser memory
+    localStorage.setItem('dsp_user_name', userName);
+    
+    // Redirect to dashboard
     window.location.href = "dashboard.html"; 
 }
 
-// 2. MOBILE NAVIGATION LOGIC
+// --- 2. DASHBOARD INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
-    // Select dashboard mobile menu buttons and sidebar
-    const dashMobileBtn = document.getElementById('dash-mobile-btn');
+    const welcomeText = document.getElementById('user-welcome-name');
+    const avatarInitials = document.getElementById('user-avatar-initials');
+    const storedName = localStorage.getItem('dsp_user_name');
+
+    // Update Dashboard with User's Name
+    if (welcomeText && storedName) {
+        welcomeText.innerText = `Hi, ${storedName}`;
+        if (avatarInitials) {
+            avatarInitials.innerText = storedName.charAt(0).toUpperCase();
+        }
+    }
+
+    // Mobile Hamburger Menu Logic
+    const dashBtn = document.getElementById('dash-mobile-btn');
     const sidebar = document.getElementById('sidebar');
-
-    if (dashMobileBtn && sidebar) {
-        dashMobileBtn.addEventListener('click', () => {
-            // Toggle sidebar visibility on mobile
+    if (dashBtn && sidebar) {
+        dashBtn.addEventListener('click', () => {
             sidebar.classList.toggle('hidden');
-            sidebar.classList.toggle('fixed');
-            sidebar.classList.toggle('inset-0');
-            sidebar.classList.toggle('z-40');
-            sidebar.classList.toggle('bg-white');
-        });
-    }
-
-    // 3. MENTOR AVATAR UPLOAD PREVIEW
-    const avatarUpload = document.getElementById('mentor-avatar-upload');
-    const avatarPreview = document.getElementById('mentor-avatar-preview');
-
-    if (avatarUpload && avatarPreview) {
-        avatarPreview.addEventListener('click', () => avatarUpload.click());
-
-        avatarUpload.addEventListener('change', function() {
-            if (this.files && this.files[0]) {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    // Update the preview area with the selected image
-                    avatarPreview.innerHTML = `<img src="${e.target.result}" class="w-full h-full rounded-full object-cover">`;
-                };
-                reader.readAsDataURL(this.files[0]);
-            }
-        });
-    }
-
-    // 4. FORM SUBMISSION (Mentor Application)
-    const mentorForm = document.getElementById('mentor-application-form');
-    if (mentorForm) {
-        mentorForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Application submitted successfully!');
-            window.location.href = "dashboard.html";
+            sidebar.classList.toggle('active');
         });
     }
 });
