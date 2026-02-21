@@ -1,125 +1,43 @@
-/* ─── BASE RESET & SMOOTH SCROLLING ─── */
+/* --- GLOBAL FIXES --- */
 html {
   scroll-behavior: smooth !important;
 }
 
 body {
   overflow-x: hidden;
-  overflow-y: auto;
-  font-family: 'Inter', sans-serif; /* Standard for modern designs */
+  font-family: 'Inter', sans-serif;
 }
 
-/* ─── LANDING PAGE FIX: PREVENT DISAPPEARING SECTIONS ─── */
-/* These rules force Features, Testimonials, and Team sections to remain visible */
-section {
+/* FIX: This stops sections from disappearing as you scroll */
+section, .features, .testimonials, .team {
   position: relative !important;
   display: block !important;
   opacity: 1 !important;
   visibility: visible !important;
-  overflow: visible !important;
-  clear: both;
+  transform: none !important; /* Disables broken scroll animations */
 }
 
-/* ─── AVATAR STYLES ─── */
+/* FIX: Removes unwanted deployment lines/raw code text */
+body > pre, body > code, .deployment-tag {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+/* --- DASHBOARD COMPONENTS --- */
 .avatar {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 9999px;
+  border-radius: 999px;
   font-weight: 600;
-  flex-shrink: 0;
 }
 
-.avatar-header {
-  width: 40px;
-  height: 40px;
-}
-
-.avatar-chat {
-  width: 32px;
-  height: 32px;
-}
-
-.avatar-lg {
-  width: 80px;
-  height: 80px;
-  font-size: 28px;
-}
-
-/* ─── DASHBOARD & SIDEBAR STABILITY ─── */
-/* Prevents main content from sliding behind fixed elements */
-@media (min-width: 1024px) {
-  .lg\:ml-64 {
-    margin-left: 16rem !important;
+@media (max-width: 1024px) {
+  #sidebar.active {
+    display: block !important;
+    position: fixed;
+    z-index: 50;
+    width: 80%;
+    height: 100vh;
   }
-}
-
-/* Sidebar behavior */
-#sidebar {
-  transition: transform 0.3s ease-in-out;
-  z-index: 40;
-}
-
-/* ─── RESPONSIVE AVATAR ADJUSTMENTS ─── */
-@media (max-width: 640px) {
-  .avatar-lg {
-    width: 64px;
-    height: 64px;
-    font-size: 22px;
-  }
-  .avatar-md {
-    width: 52px;
-    height: 52px;
-    font-size: 18px;
-  }
-  .avatar-stack {
-    width: 40px;
-    height: 40px;
-    font-size: 14px;
-  }
-  /* Stacked avatars collapse on mobile */
-  .flex.-space-x-4 {
-    gap: 0;
-    margin-left: 0;
-  }
-  .flex.-space-x-4 > .avatar-stack:nth-child(n+6) {
-    display: none;
-  }
-  .flex.-space-x-4 > .avatar-stack:last-child {
-    display: inline-flex;
-  }
-}
-
-/* ─── MOBILE NAVIGATION ─── */
-@media (max-width: 768px) {
-  #mobile-menu.active {
-    display: block;
-  }
-  #mobile-sidebar.active {
-    display: block;
-    animation: slideIn 0.25s ease-out;
-  }
-  #sidebar-overlay.active {
-    display: block;
-  }
-}
-
-@keyframes slideIn {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
-}
-
-/* ─── UTILITY CLASSES ─── */
-.truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/* Hover Effects */
-.hover-lift {
-  transition: transform 0.2s ease;
-}
-.hover-lift:hover {
-  transform: translateY(-1px);
 }
