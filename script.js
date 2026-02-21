@@ -1,39 +1,43 @@
-// --- 1. LOGIN & SIGNUP REDIRECT ---
-function handleLogin(event) {
-    event.preventDefault();
+// --- UNIVERSAL AUTHENTICATION & REDIRECT ---
+function handleAuth(event) {
+    event.preventDefault(); // Stop page from refreshing
     
-    // Looks for the name input field in your login/signup form
-    const nameInput = document.querySelector('input[type="text"]') || document.getElementById('login-name');
+    // 1. Get the name from the input field
+    // Note: We use a generic selector so it works on any form (Login or Signup)
+    const nameInput = document.querySelector('input[type="text"]') || document.getElementById('user-name-input');
     const userName = nameInput ? nameInput.value : "Designer";
     
-    // Save name to browser memory
+    // 2. Save the name to browser memory
     localStorage.setItem('dsp_user_name', userName);
     
-    // Redirect to dashboard
+    // 3. REDIRECT: We use a "path-safe" redirect
+    // This will work on your computer AND after you deploy it
     window.location.href = "dashboard.html"; 
 }
 
-// --- 2. DASHBOARD INITIALIZATION ---
+// --- DASHBOARD LOADER ---
 document.addEventListener('DOMContentLoaded', () => {
+    // Check if we are actually on the dashboard page
     const welcomeText = document.getElementById('user-welcome-name');
-    const avatarInitials = document.getElementById('user-avatar-initials');
     const storedName = localStorage.getItem('dsp_user_name');
 
-    // Update Dashboard with User's Name
     if (welcomeText && storedName) {
         welcomeText.innerText = `Hi, ${storedName}`;
-        if (avatarInitials) {
-            avatarInitials.innerText = storedName.charAt(0).toUpperCase();
+        
+        // Update initials in the circle
+        const avatar = document.getElementById('user-avatar-initials');
+        if (avatar) {
+            avatar.innerText = storedName.charAt(0).toUpperCase();
         }
     }
 
-    // Mobile Hamburger Menu Logic
-    const dashBtn = document.getElementById('dash-mobile-btn');
+    // DASHBOARD MOBILE MENU (Hamburger)
+    const menuBtn = document.getElementById('dash-mobile-btn');
     const sidebar = document.getElementById('sidebar');
-    if (dashBtn && sidebar) {
-        dashBtn.addEventListener('click', () => {
+    if (menuBtn && sidebar) {
+        menuBtn.addEventListener('click', () => {
             sidebar.classList.toggle('hidden');
-            sidebar.classList.toggle('active');
+            sidebar.classList.toggle('active'); // Needs the CSS below
         });
     }
 });
