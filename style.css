@@ -41,3 +41,23 @@ body > pre, body > code, .deployment-tag {
     height: 100vh;
   }
 }
+/* --- DASHBOARD MOBILE FIXES --- */
+@media (max-width: 1024px) {
+  #sidebar.active {
+    display: block !important;
+    position: fixed;
+    top: 64px; /* Height of your header */
+    left: 0;
+    width: 280px;
+    height: calc(100vh - 64px);
+    background: white;
+    z-index: 100;
+    box-shadow: 10px 0 15px -3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* --- REMOVE DEPLOYMENT GHOST LINE --- */
+body > pre, body > code {
+    display: none !important;
+}
+
