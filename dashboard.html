@@ -1,79 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Designer Dashboard — Designer's Safe Space</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { green: '#16a34a', yellow: '#facc15', purple: '#7c3aed' }
-          }
-        }
-      }
-    }
-  </script>
-</head>
-<body class="bg-gray-50 text-black font-sans antialiased">
-  <header class="fixed top-0 left-0 right-0 bg-white z-50 border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <div class="flex items-center gap-4">
-          <div class="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center text-white font-bold text-sm">AD</div>
-          <div>
-            <p class="font-semibold text-sm">Hi, Adaeze</p>
-            <p class="text-xs text-gray-500">Junior Designer</p>
-          </div>
-        </div>
-        <div class="flex items-center gap-4">
-          <div class="hidden sm:flex items-center gap-2 bg-yellow-50 text-yellow-700 px-4 py-2 rounded-xl border border-yellow-200">
-            <span class="text-xs font-bold">1,000 Points Welcome Bonus</span>
-          </div>
-          <button class="relative p-2 text-gray-500">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
-            <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-          </button>
-        </div>
-      </div>
+<header class="fixed top-0 w-full bg-white border-b z-50 px-4 h-16 flex items-center justify-between">
+  <div class="flex items-center gap-3">
+    <div id="user-avatar-initials" class="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">U</div>
+    <div>
+      <p id="user-welcome-name" class="font-bold text-sm">Hi, User</p>
+      <p class="text-xs text-gray-500">Member</p>
     </div>
-  </header>
-
-  <div class="flex pt-16">
-    <aside id="sidebar" class="hidden lg:block w-64 bg-white border-r border-gray-100 fixed top-16 bottom-0 left-0 overflow-y-auto">
-      <nav class="p-4 space-y-1">
-        <a href="dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-green-50 text-brand-green font-medium text-sm">
-          Dashboard
-        </a>
-        <a href="services.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-black font-medium text-sm transition-colors">
-          Courses
-        </a>
-        <a href="community.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-black font-medium text-sm transition-colors">
-          Community
-        </a>
-        <a href="messages.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-black font-medium text-sm transition-colors">
-          Messages
-        </a>
-        <a href="apply-mentor.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-black font-medium text-sm transition-colors">
-          Apply for Work
-        </a>
-      </nav>
-      <div class="absolute bottom-0 w-full p-4 border-t border-gray-100">
-        <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-red-500 hover:bg-red-50 font-medium text-sm transition-colors">
-          Sign Out
-        </a>
-      </div>
-    </aside>
-
-    <main class="flex-1 lg:ml-64 p-6 min-h-screen">
-      <h1 class="text-2xl font-bold mb-4">Welcome back, Adaeze!</h1>
-      <p class="text-gray-600">This is your stable dashboard template. All navigation links are now fixed.</p>
-      </main>
   </div>
+  <button id="dash-mobile-btn" class="lg:hidden">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+  </button>
+</header>
 
-  <script src="script.js"></script>
-</body>
-</html>
+<div class="flex pt-16">
+  <aside id="sidebar" class="hidden lg:block w-64 bg-white border-r fixed h-full p-4">
+    <nav class="space-y-2">
+      <a href="dashboard.html" class="block p-3 rounded-lg bg-green-50 text-green-700 font-medium">Dashboard</a>
+      <a href="community.html" class="block p-3 rounded-lg text-gray-600 hover:bg-gray-50">Community</a>
+      <a href="messages.html" class="block p-3 rounded-lg text-gray-600 hover:bg-gray-50">Messages</a>
+      <a href="apply-mentor.html" class="block p-3 rounded-lg text-gray-600 hover:bg-gray-50">Apply for Work</a>
+      <a href="index.html" class="block p-3 mt-10 text-red-500 font-medium">Logout</a>
+    </nav>
+  </aside>
+
+  <main class="flex-1 lg:ml-64 p-6 bg-gray-50 min-h-screen">
+    <h1 class="text-2xl font-bold">Dashboard Overview</h1>
+    </main>
+</div>
+
+<script src="script.js"></script>
